@@ -25,10 +25,15 @@
                 <h5 class="titulo">Listado de Tarjetas</h5>
                 <table class="table">
                     <tbody>
-                        <tr>
-                            <td>Noel Ortiz</td>
-                            <td>12345678</td>
-                            <td>12/30</td>
+                        <th>Nombre</th>
+                        <th>Numero de Tarjeta</th>
+                        <th>fecha de expiracion</th>
+                        <th>CVV</th>
+                        <tr *ngFor="let tarjeta of listaTarjetas">
+                            <td>{{tarjeta.titulo}}</td>
+                            <td>{{tarjeta.NumeroTarjeta}}</td>
+                            <td>{{tarjeta.FechaExpiracion}}</td>
+                            <td>{{tarjeta.cvv}}</td>
                             <td>
                                 <i class="fas fa-edit  text-info"></i>
                             </td>
