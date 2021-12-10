@@ -42,4 +42,6 @@ export class TarjetaCreditoComponent implements OnInit {
     this.form.reset();
   }
 
+ 
+
 }

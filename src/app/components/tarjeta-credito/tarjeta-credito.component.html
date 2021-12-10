@@ -20,39 +20,50 @@
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text">
                                 <i class="fas fa-user" 
-                                    [class.green-icon]="this.form.get('titulo')?.valid" ></i>
+                                    [class.green-icon]="this.form.get('titulo')?.valid" 
+                                    [class.red-icon]="this.form.get('titulo')?.invalid && this.form.get('titulo')?.touched" ></i>
                                 
                             </span>
-                            <input formControlName="titulo" type="text" class="form-control" placeholder="Titular">
+                            <input formControlName="titulo" maxlength="16" type="text" class="form-control" placeholder="Titular">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text">
-                                <i class="far fa-credit-card"></i>
+                                <i class="far fa-credit-card"
+                                    [class.green-icon]="this.form.get('NumeroTarjeta')?.valid" 
+                                    [class.red-icon]="this.form.get('NumeroTarjeta')?.invalid && this.form.get('NumeroTarjeta')?.touched" >
+                                </i>
                             </span>
-                            <input  formControlName="NumeroTarjeta" type="text" class="form-control" placeholder="Numero de Tarjeta">
+                            <input  formControlName="NumeroTarjeta" type="text" maxlength="16" class="form-control" placeholder="Numero de Tarjeta">
                         </div>
 
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="input-group input-group-lg mb-3">
                                     <span class="input-group-text">
-                                        <i class="fas fa-calendar-alt"></i>
+                                        <i class="fas fa-calendar-alt"
+                                            [class.green-icon]="this.form.get('FechaExpiracion')?.valid" 
+                                         [class.red-icon]="this.form.get('FechaExpiracion')?.invalid && this.form.get('FechaExpiracion')?.touched"> </i>
+                                        
                                     </span>
-                                    <input formControlName="FechaExpiracion" type="text" class="form-control" placeholder="MM/YY">
+                                    <input formControlName="FechaExpiracion" maxlength="5" type="text" class="form-control" placeholder="MM/YY">
                                 </div>
+                            </div>
                                 <div class="col-lg-5">
                                     <div class="input-group input-group-lg mb-3">
                                         <span class="input-group-text">
-                                            <i class="fas fa-key"></i> 
+                                            <i class="fas fa-key"
+                                            [class.green-icon]="this.form.get('cvv')?.valid" 
+                                            [class.red-icon]="this.form.get('cvv')?.invalid && this.form.get('cvv')?.touched">
+                                            </i> 
                                         </span>
-                                        <input formControlName="cvv" type="text" class="form-control" placeholder="CVV">
+                                        <input formControlName="cvv" maxlength="3" type="text" class="form-control" placeholder="CVV">
                                     </div>
                                 </div>
                             </div>
-                        </div>   
+                           
                         <div class="d-grid gap2">
-                            <button class="btn btn-success btn-lg" type="submit"> 
+                            <button [disabled]="this.form.invalid" class="btn btn-success btn-lg" type="submit"> 
                                 <i class="fas fa-save"></i>&nbsp; Aceptar</button>
                         </div>
                     </form>
