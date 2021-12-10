@@ -4,7 +4,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="card">
                     <div class="card-body ">
-                        <div class="titulo">Tarjeta de Credito</div>
+                        <h5 class="titulo">Tarjeta de Credito</h5> 
                     </div>
                 </div>
             </div>
@@ -16,19 +16,19 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="titulo">Agregar Tarjeta</h5>
-                    <form>
+                    <form [formGroup]="form" (ngSubmit)="agregarTarjeta()">
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text">
                                 <i class="fas fa-user"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Titular">
+                            <input formControlName="titulo" type="text" class="form-control" placeholder="Titular">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text">
                                 <i class="far fa-credit-card"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Numero de Tarjeta">
+                            <input  formControlName="NumeroTarjeta" type="text" class="form-control" placeholder="Numero de Tarjeta">
                         </div>
 
                         <div class="row">
@@ -37,20 +37,21 @@
                                     <span class="input-group-text">
                                         <i class="fas fa-calendar-alt"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="MM/YY">
+                                    <input formControlName="FechaExpiracion" type="text" class="form-control" placeholder="MM/YY">
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="input-group input-group-lg mb-3">
                                         <span class="input-group-text">
                                             <i class="fas fa-key"></i> 
                                         </span>
-                                        <input type="text" class="form-control" placeholder="CVV">
+                                        <input formControlName="cvv" type="text" class="form-control" placeholder="CVV">
                                     </div>
                                 </div>
                             </div>
                         </div>   
                         <div class="d-grid gap2">
-                            <button class="btn btn-success btn-lg" type="submit"> <i class="fas fa-save"></i>&nbsp; Aceptar</button>
+                            <button class="btn btn-success btn-lg" type="submit"> 
+                                <i class="fas fa-save"></i>&nbsp; Aceptar</button>
                         </div>
                     </form>
                 </div>
