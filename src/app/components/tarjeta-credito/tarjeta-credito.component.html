@@ -19,7 +19,9 @@
                     <form [formGroup]="form" (ngSubmit)="agregarTarjeta()">
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-user" 
+                                    [class.green-icon]="this.form.get('titulo')?.valid" ></i>
+                                
                             </span>
                             <input formControlName="titulo" type="text" class="form-control" placeholder="Titular">
                         </div>

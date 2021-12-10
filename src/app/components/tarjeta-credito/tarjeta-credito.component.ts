@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tarjeta-credito',
@@ -18,10 +18,10 @@ export class TarjetaCreditoComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      titulo: [''],
-      NumeroTarjeta: [''],
-      FechaExpiracion: [''],
-      cvv: ['']
+      titulo: ['', Validators.required],
+      NumeroTarjeta: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(16)]],
+      FechaExpiracion: ['',[Validators.required, Validators.maxLength(5), Validators.minLength(5)]],
+      cvv: ['', [Validators.required, Validators.maxLength(3), Validators.minLength(3)]]
     })
    }
 
