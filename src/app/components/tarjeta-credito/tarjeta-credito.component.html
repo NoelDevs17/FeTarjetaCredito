@@ -81,7 +81,7 @@
                             <th>Numero de Tarjeta</th>
                             <th>Fecha de expiracion</th>
                             <th>CVV</th>
-                            <tr *ngFor="let tarjeta of listaTarjetas">
+                            <tr *ngFor="let tarjeta of listaTarjetas; let i = index">
                                 <td>{{tarjeta.titulo}}</td>
                                 <td>{{tarjeta.NumeroTarjeta}}</td>
                                 <td>{{tarjeta.FechaExpiracion}}</td>
@@ -90,7 +90,7 @@
                                     <i class="fas fa-edit  text-info"></i>
                                 </td>
                                 <td>
-                                    <i class="fas fa-trash-alt text-danger"></i>
+                                    <i  (click)="EliminarTarjeta(i)" class="fas fa-trash-alt text-danger"></i>
                                 </td>
                             </tr>
                         </tbody>
